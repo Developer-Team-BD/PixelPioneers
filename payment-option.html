@@ -200,6 +200,9 @@
             color: #FFCC00;
             cursor: pointer;
             word-break: break-all;
+            display: inline-flex;  /* Make it a flex container */
+            align-items: center;    /* Vertically center the address and button */
+            gap: 10px;             /* Add some gap between them */
         }
 
         #wallet-address:hover {
@@ -207,6 +210,21 @@
             padding: 5px;
             border-radius: 5px;
         }
+
+        .copy-button {
+            background: none;
+            border: none;
+            color: #FFCC00;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 0;
+            transition: color 0.3s ease;
+        }
+
+        .copy-button:hover {
+            color: #fff;
+        }
+
 
         #qr-code {
             margin-top: 25px;
@@ -338,6 +356,11 @@
                 font-size: 1em;
                 width: 100%;
             }
+             #wallet-address {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -352,6 +375,11 @@
 
             #crypto-info p {
                 font-size: 1em;
+            }
+             #wallet-address {
+                display: flex;
+                align-items: center;
+                gap: 10px;
             }
         }
     </style>
@@ -387,7 +415,7 @@
             <div id="crypto-info">
                 <h2>Selected Cryptocurrency</h2>
                 <p id="crypto-name-network">Deposit BTC, Network: Bitcoin</p>
-                <p>Deposit Address: <br><span id="wallet-address">1GMeGpVTkgKghKJaKs3ZdSpHiaDJLpiD3B</span></p>
+                <p>Deposit Address: <span id="wallet-address">1GMeGpVTkgKghKJaKs3ZdSpHiaDJLpiD3B</span><button class="copy-button" onclick="copyToClipboard('1GMeGpVTkgKghKJaKs3ZdSpHiaDJLpiD3B')">Copy</button></p>
                 <img id="qr-code" src="images/Deposit-BTC.jpg" alt="BTC QR Code">
                 <a href="payment-confirmation.html"><button id="payment-done-button">Payment Done</button></a>
             </div>
@@ -445,7 +473,7 @@
 
             // Check if the selected currency exists in the defined data
             if (walletAddresses[selectedCrypto]) {
-                walletAddressDisplay.textContent = walletAddresses[selectedCrypto];
+                walletAddressDisplay.innerHTML = `${walletAddresses[selectedCrypto]}<button class="copy-button" onclick="copyToClipboard('${walletAddresses[selectedCrypto]}')">Copy</button>`;
                 qrCodeDisplay.src = qrCodeUrls[selectedCrypto];
                 cryptoNameNetwork.textContent = `Deposit ${selectedCrypto.toUpperCase()}, Network: ${cryptoNetworks[selectedCrypto]}`;
             } else {
@@ -464,6 +492,17 @@
 
         // Initialize the page with the default selected cryptocurrency (BTC)
         updateCryptoInfo("btc");
+
+        function copyToClipboard(text) {
+            const tempInput = document.createElement("input");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); /* For mobile phones */
+            navigator.clipboard.writeText(tempInput.value);
+            document.body.removeChild(tempInput);
+            alert("Wallet address copied to clipboard!");
+        }
     </script>
 </body>
 </html>
