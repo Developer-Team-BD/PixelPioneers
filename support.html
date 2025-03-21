@@ -6,7 +6,6 @@
     <title>Support</title>
     <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
         body {
             font-family: 'Arial', sans-serif;
             background: linear-gradient(to bottom, #800080, #E91E63);
@@ -22,7 +21,6 @@
             padding: 20px;
             box-sizing: border-box;
         }
-        /* Header Styles */
         header {
             display: flex;
             justify-content: space-between;
@@ -31,14 +29,12 @@
             flex-wrap: wrap;
             position: relative;
         }
-
         #logo {
             width: 150px;
             height: auto;
             max-width: 100%;
             box-sizing: border-box;
         }
-
         nav {
             display: flex;
             justify-content: flex-end;
@@ -46,7 +42,6 @@
             margin-top: 10px;
             margin-left: auto;
         }
-
         nav a {
             background: linear-gradient(to bottom, #800080, #E91E63);
             color: #fff;
@@ -60,12 +55,10 @@
             margin: 5px;
             box-sizing: border-box;
         }
-
         nav a:hover {
             background: linear-gradient(to bottom, #CC2255, #A81848);
             box-shadow: 0 4px 12px rgba(255, 255, 255, 0.7);
         }
-
         #menu-icon {
             display: none;
             color: #fff;
@@ -75,19 +68,16 @@
             top: 20px;
             right: 20px;
         }
-
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
                 align-items: flex-start;
             }
-
             #logo {
                 margin-bottom: 20px;
                 max-width: 40%;
                 box-sizing: border-box;
             }
-
             nav {
                 display: none;
                 flex-direction: column;
@@ -99,35 +89,31 @@
                 left: 0;
                 margin-left: 0;
             }
-
             nav.active {
                 display: flex;
             }
-
             nav a {
                 margin: 5px 0;
                 width: 100%;
                 text-align: center;
                 box-sizing: border-box;
             }
-
             #menu-icon {
                 display: block;
             }
-
             #menu-icon.active::before {
                 content: '✕';
             }
-
             #menu-icon::before {
                 content: '☰';
             }
         }
-
-        /* Main Content Styles */
-        main {
-            margin-top: 30px;
-            text-align: center;
+        #logo {
+            max-width: 100%;
+            height: auto;
+        }
+        #menu-icon {
+            color: #fff;
         }
         .section-heading {
             font-size: 2.5em;
