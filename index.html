@@ -296,7 +296,11 @@
 </head>
 <body>
     <header>
-        <h1>PixelPioneers</h1>
+        <h1>
+            <a href="index.html" style="color:#fff; text-decoration: none;">
+                PixelPioneers
+            </a>
+        </h1>
         <nav>
             <a href="#portfolio"  style="display: inline-block; background-color: rgb(2, 34, 104); color: #fff; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">Portfolio</a>
             <a href="#contact" style="display: inline-block; background-color: rgb(2, 34, 104); color: #fff; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">Contact</a>
@@ -314,43 +318,43 @@
                 <img src="images/logo_1.jpg" alt="Logo 1">
                 <h3>I will create a modern and minimalist logo for your brand.</h3>
                 <p>Description of Logo 1.</p>
-                <a href="#" data-image="images/logo_1.jpg" data-title="I will create a modern and minimalist logo for your brand." data-description="Description of Logo 1." class="view-details-button">View Details</a>
+                <a href="portfolio_details.html?image=images/logo_1.jpg&title=Modern%20Minimalist%20Logo&description=Description%20of%20Logo%201." class="view-details-button">View Details</a>
             </div>
             <div class="portfolio-item">
                 <img src="images/logo_2.jpg" alt="Logo 2">
                 <h3>I will design a vibrant and colorful logo to represent your brand identity.</h3>
                 <p>Description of Logo 2.</p>
-                <a href="#" data-image="images/logo_2.jpg" data-title="I will design a vibrant and colorful logo to represent your brand identity." data-description="Description of Logo 2." class="view-details-button">View Details</a>
+                <a href="portfolio_details.html?image=images/logo_2.jpg&title=Vibrant%20Colorful%20Logo&description=Description%20of%20Logo%202." class="view-details-button">View Details</a>
             </div>
             <div class="portfolio-item">
                 <img src="images/logo_3.jpg" alt="Logo 3">
                 <h3>I will create a professional and elegant logo that reflects sophistication.</h3>
                 <p>Description of Logo 3.</p>
-                <a href="#" data-image="images/logo_3.jpg" data-title="I will create a professional and elegant logo that reflects sophistication." data-description="Description of Logo 3." class="view-details-button">View Details</a>
+                <a href="portfolio_details.html?image=images/logo_3.jpg&title=Professional%20Elegant%20Logo&description=Description%20of%20Logo%203." class="view-details-button">View Details</a>
             </div>
             <div class="portfolio-item">
                 <img src="images/logo_4.jpg" alt="Logo 4">
                 <h3>I will design a unique and creative logo that captures your brand's essence.</h3>
                 <p>Description of Logo 4.</p>
-                <a href="#" data-image="images/logo_4.jpg" data-title="I will design a unique and creative logo that captures your brand's essence." data-description="Description of Logo 4." class="view-details-button">View Details</a>
+                <a href="portfolio_details.html?image=images/logo_4.jpg&title=Unique%20Creative%20Logo&description=Description%20of%20Logo%204." class="view-details-button">View Details</a>
             </div>
              <div class="portfolio-item">
                 <img src="images/logo_5.jpg" alt="Logo 5">
                 <h3>I will design a timeless and classic logo that will endure.</h3>
                 <p>Description of Logo 5.</p>
-                <a href="#" data-image="images/logo_5.jpg" data-title="I will design a timeless and classic logo that will endure." data-description="Description of Logo 5." class="view-details-button">View Details</a>
+                <a href="portfolio_details.html?image=images/logo_5.jpg&title=Timeless%20Classic%20Logo&description=Description%20of%20Logo%205." class="view-details-button">View Details</a>
             </div>
              <div class="portfolio-item">
                 <img src="images/logo_6.jpg" alt="Logo 6">
                 <h3>I will create a modern and abstract logo that is both artistic and memorable.</h3>
                 <p>Description of Logo 6.</p>
-                <a href="#" data-image="images/logo_6.jpg" data-title="I will create a modern and abstract logo that is both artistic and memorable." data-description="Description of Logo 6." class="view-details-button">View Details</a>
+                <a href="portfolio_details.html?image=images/logo_6.jpg&title=Modern%20Abstract%20Logo&description=Description%20of%20Logo%206." class="view-details-button">View Details</a>
             </div>
             <div class="portfolio-item">
                 <img src="images/logo_7.jpg" alt="Logo 7">
                 <h3>I will design a playful and fun logo that appeals to your target audience.</h3>
                 <p>Description of Logo 7.</p>
-                <a href="#" data-image="images/logo_7.jpg" data-title="I will design a playful and fun logo that appeals to your target audience." data-description="Description of Logo 7." class="view-details-button">View Details</a>
+                <a href="portfolio_details.html?image=images/logo_7.jpg&title=Playful%20Fun%20Logo&description=Description%20of%20Logo%207." class="view-details-button">View Details</a>
             </div>
         </section>
 
@@ -377,121 +381,5 @@
     <footer>
         <p class="copyright">Copyright &copy; 2025 PixelPioneers. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-        portfolioItems.forEach(item => {
-            const viewDetailsButton = item.querySelector('.view-details-button');
-
-            viewDetailsButton.addEventListener('click', (event) => {
-                event.preventDefault();
-
-                const imageSrc = event.target.getAttribute('data-image');
-                const title = event.target.getAttribute('data-title');
-                const description = event.target.getAttribute('data-description');
-
-                // Create a new HTML page content
-                const newPageContent = `
-                    <!DOCTYPE html>
-                    <html lang="en">
-                    <head>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>${title}</title>
-                        <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
-                        <style>
-                            body {
-                                font-family: 'Arial', sans-serif;
-                                background-color: rgb(2, 34, 104);
-                                color: #fff;
-                                margin: 0;
-                                padding: 0;
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                                justify-content: flex-start;
-                                min-height: 100vh;
-                            }
-                            .container {
-                                max-width: 800px;
-                                width: 90%;
-                                padding: 20px;
-                                background-color: rgba(255, 255, 255, 0.1);
-                                border-radius: 10px;
-                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-                                margin-top: 50px;
-                                backdrop-filter: blur(10px);
-                                border: 1px solid rgba(255, 255, 255, 0.1);
-                                text-align: center;
-                            }
-                            img {
-                                max-width: 100%;
-                                border-radius: 5px;
-                                margin-bottom: 20px;
-                            }
-                            h1 {
-                                font-size: 2em;
-                                margin-bottom: 20px;
-                            }
-                            p {
-                                font-size: 1.1em;
-                                line-height: 1.7;
-                                color: #eee;
-                            }
-                            a {
-                                display: inline-block;
-                                background-color: rgb(2, 34, 104);
-                                color: #fff;
-                                padding: 10px 20px;
-                                border-radius: 5px;
-                                text-decoration: none;
-                                font-size: 1.1em;
-                                transition: all 0.3s ease;
-                                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-                                margin-top: 20px;
-                            }
-                            a:hover {
-                                background-color: rgba(2, 34, 104, 0.8);
-                                box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-                            }
-                            footer {
-                                background-color: rgba(2, 34, 104, 0.9);
-                                color: white;
-                                text-align: center;
-                                padding: 25px 0;
-                                margin-top: 50px;
-                                border-top: 1px solid #001a4d;
-                                width: 100%;
-                                position: relative;
-                                bottom: 0;
-                            }
-                            footer p {
-                                font-size: 0.9em;
-                                color: #eee;
-                            }
-                        </style>
-                    </head>
-                    <body>
-                        <div class="container">
-                            <h1>${title}</h1>
-                            <img src="${imageSrc}" alt="${title}">
-                            <p>${description}</p>
-                            <a href="mailto:info@logodesigner.com">Contact Me</a>
-                        </div>
-                        <footer>
-                            <p class="copyright">Copyright &copy; 2025 PixelPioneers. All Rights Reserved.</p>
-                        </footer>
-                    </body>
-                    </html>
-                `;
-
-                // Open a new window and write the content
-                const newWindow = window.open();
-                newWindow.document.write(newPageContent);
-                newWindow.document.close();
-            });
-        });
-    </script>
 </body>
 </html>
